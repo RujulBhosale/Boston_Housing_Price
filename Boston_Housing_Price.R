@@ -1,17 +1,17 @@
-library(MASS) #box cox
+library(MASS) 
 library(caret)
-library(car) #for vif #db test
+library(car) 
 library(corrplot)
 library(olsrr)
 library(moments)
-#View(`housing.(1)`)
+View(`housing.(1)`)
 
-#EDA
+## EDA ##
 data=data.frame(`housing.(1)`)
 summary(data)
 
 
-#
+## To check if the response variables are normal ##
 qqnorm(data$medv)
 attach(data)  
 boxplot(medv)
@@ -68,3 +68,8 @@ bptest(model2)
 
 summary(model2)
 confint(model2)
+
+#Residual standard error: 0.1928 on 495 degrees of freedom
+#Multiple R-squared:  0.7819,	Adjusted R-squared:  0.7775 
+#F-statistic: 177.4 on 10 and 495 DF,  p-value: < 2.2e-16
+
